@@ -36,10 +36,9 @@ optimizations made to index.html file to get 95  pagespeed score for both mobile
 ####Part 2: Optimize Frames per Second in pizza.html
 
 To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. 
-
-1.Used getElementByClassName and getElementById instead of querySelector and querySelectorAll or DOM access
-2.Moved all the DOM access methods out of loop
-3.Used windows.innerHeight to calcualte no of moving pizzas on screen
+1. Used getElementByClassName and getElementById instead of querySelector and querySelectorAll or DOM access
+2. Moved all the DOM access methods out of loop
+3. Used windows.innerHeight to calcualte no of moving pizzas on screen
 4. Used css3 transform for updating the postions of moving pizzas
 
 
