@@ -403,16 +403,17 @@ var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
   // Changes the value for the size of the pizza above the slider
+  var _pizzasize = document.getElementById("pizzaSize");
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
-        document.getElementById("pizzaSize").innerHTML = "Small";
+        _pizzasize.innerHTML = "Small";
         return;
       case "2":
-        document.getElementById("pizzaSize").innerHTML = "Medium";
+        _pizzasize.innerHTML = "Medium";
         return;
       case "3":
-        document.getElementById("pizzaSize").innerHTML = "Large";
+        _pizzasize.innerHTML = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
@@ -507,11 +508,11 @@ function updatePositions() {
   var phase = [];
 
 for (var i = 0; i < 5; i++) {
-    phase.push(Math.sin(scrollHeight+ i) * 100);
+    phase.push(Math.sin(scrollHeight+ i));
 }
 
 for (var i = 0, max = items.length; i < max; i++) {
-    items[i].style.left = items[i].basicLeft + phase[i%5] + 'px';
+    items[i].style.left = items[i].basicLeft + phase[i%5] * 100+ 'px';
 }
   /*for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((scrollHeight) + (i % 5));
@@ -535,8 +536,13 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-   console.log(window.innerHeight);
-  for (var i = 0; i < 5; i++) {
+
+var numColumns = screen.width/100;
+var numRows = screen.height/73.333;
+var numPizzas = numRows*numColumns;
+
+   
+  for (var i = 0; i < numPizzas; i++) {
 
     var elem = document.createElement('img');
     elem.className = 'mover';
