@@ -514,10 +514,7 @@ for (var i = 0; i < 5; i++) {
 for (var i = 0, max = items.length; i < max; i++) {
     items[i].style.left = items[i].basicLeft + phase[i%5] * 100+ 'px';
 }
-  /*for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((scrollHeight) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-  }*/
+ 
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
