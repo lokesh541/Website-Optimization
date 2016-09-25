@@ -503,9 +503,9 @@ for (var i = 0; i < 5; i++) {
 }
 var max = items.length;
 for (var i = 0; i < max; i++) {
- // items[i].style.left =  items[i].basicLeft + phase[i%5] + 'px';
+ //items[i].style.left =  items[i].basicLeft + phase[i%5] + 'px';
 
- items[i].style.transform = 'translateX( '+ phase[i%5] + 'px)';
+ items[i].style.transform = 'translateX( '+ phase[i%5] + 'px) translateZ(0)';
 }
  
 
@@ -537,7 +537,7 @@ for (var i = 0; i < numPizzas; i++) {
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.style.left = (i % cols) * s + 'px';
-    //elem.basicLeft = (i % cols) * s;
+    elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.getElementById("movingPizzas1").appendChild(elem);
   }
