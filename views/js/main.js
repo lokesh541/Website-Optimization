@@ -494,15 +494,17 @@ function updatePositions() {
 
   var items = document.getElementsByClassName('mover');
   var scrollHeight=  document.body.scrollTop / 1250;
-  var phase = [];
+  var phases = [];
+  var phase;
 
 for (var i = 0; i < 5; i++) {
-    phase.push(Math.sin(scrollHeight + i));
+    phases.push(Math.sin(scrollHeight + i));
 }
 
 for (var i = 0, max = items.length; i < max; i++) {
-   items[i].style.left = items[i].basicLeft + phase[i%5] * 100+ 'px';
-
+  // items[i].style.left = items[i].basicLeft + phase[i%5] * 100+ 'px';
+   phase = phases[i%5];
+  items[i].style.transform = 'translateX(' + 1000 * phase + 'px)';
 }
  
 
