@@ -27,15 +27,21 @@ Some useful tips to help you get started:
   ```
 
 Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
+
+
 optimizations made to index.html file to get 95  pagespeed score for both mobile and desktop
+
+
 1. Compressed views/images/pizzeria.jpg and profilepic.jpg
-1. Used web font loader for loading google fonts
-1. Used async attribute for loading scripts and also moved scripts to the bottom of the page
-1. Used media attribute for loading css files
+2. Used web font loader for loading google fonts
+3. Used async attribute for loading scripts and also moved scripts to the bottom of the page
+4. Used media attribute for loading css files
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
 To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. 
+
+
 1. Used getElementByClassName and getElementById instead of querySelector and querySelectorAll or DOM access
 2. Moved all the DOM access methods out of loop
 3. Used windows.innerHeight to calcualte no of moving pizzas on screen
